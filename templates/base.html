@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+
+        {% block Titulo %}
+        {% endblock %}
+
+    </title>
+</head>
+<body>
+    <header>
+        <div>
+            <div>
+                <img src="" alt="acá va el logo">
+            </div>
+            <div>
+                <h1>ElectroTienda</h1>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/productos/">PRODUCTOS</a></li>
+                <li><a href="/categorias/">CATEGORIAS</a></li>
+                <li><a href="/locales/">LOCALES</a></li>
+            </ul>
+        </nav>
+        <div>
+            <div>
+                <input type="text" placeholder="Buscar">
+            </div>
+            <div>
+                <button>Buscar</button>
+            </div>
+        </div>
+    </header>
+
+    {% block Contenido %}
+    {% endblock %}
+
+</body>
+</html>
