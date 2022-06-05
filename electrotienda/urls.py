@@ -23,5 +23,6 @@ urlpatterns = [
     path('', index_view, name = 'index'),
     path('productos/', producto_view, name = 'productos'),
     path('categorias/', categoria_view, name = 'categorias'),
-    path('locales/', local_view, name = 'locales')
+    path('locales/', local_view, name = 'locales'),
+    path('productos/crear_producto/', crear_producto, name = 'crear_producto'),
 ]

@@ -1,7 +1,12 @@
 from multiprocessing import context
 from shutil import register_unpack_format
 from django.shortcuts import render
+from django.http import HttpResponse
+
 from productos.models import *
+from productos.forms import product_form
+
+
 
 # Create your views here.
 def index_view(request):
@@ -21,3 +26,21 @@ def local_view(request):
     locales = Local.objects.all()
     context = {'locales': locales}
     return render(request, 'locales.html', context = context)
+
+def crear_producto(request):
+    if request.method == 'GET':
+        form = product_form
+        context = {'form':form}
+        return render(request, 'crear_producto.html', context = context)
+    else:
+        form = product_form(request.POST)
+        if form.is_valid():
+            new_product = Producto.objects.create(
+                name = form.cleaned_data['name'],
+                descripcion = form.cleaned_data['descripcion'],
+                precio = form.cleaned_data['precio'],
+                SKU = form.cleaned_data['SKU'],
+                activo = form.cleaned_data['activo'],
+            )
+            context = {'new_product':new_product}
+        return render(request, 'crear_producto.html', context = context)
