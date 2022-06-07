@@ -44,3 +44,8 @@ def crear_producto(request):
             )
             context = {'new_product':new_product}
         return render(request, 'crear_producto.html', context = context)
+
+def search_product_view(request):
+    products = Producto.objects.filter(name = request.GET["search"])
+    context = {"products":products}
+    return render(request, "search_product.html", context = context)

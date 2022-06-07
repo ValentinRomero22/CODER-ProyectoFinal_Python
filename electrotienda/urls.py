@@ -25,4 +25,5 @@ urlpatterns = [
     path('categorias/', categoria_view, name = 'categorias'),
     path('locales/', local_view, name = 'locales'),
     path('productos/crear_producto/', crear_producto, name = 'crear_producto'),
+    path("productos/search-product/", search_product_view, name = "search_product_view")
 ]
