@@ -11,6 +11,7 @@
 
     </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="../static/estilos.css">
     <head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-pink bg-primary">
@@ -35,10 +36,9 @@
                    Categorias
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/categorias/">Celulares</a>
-                    <a class="dropdown-item" href="/categorias/">Notebook</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="/productos/crear_local">Local</a>
+                    <a class="dropdown-item" href="/productos/crear_producto">Producto</a>
+                    <a class="dropdown-item" href="/productos/crear_categoria/">Categoria</a>
                   </div>
                 </li>
               </ul>
@@ -49,38 +49,10 @@
             </div>
           </nav>
 </head>
+      {% block Contenido %}
+      {% endblock %}
 
-<body>
-    <header>
-        <div>
-            <div>
-                <img src="" alt="acá va el logo">
-            </div>
-            <div>
-                <h1>ElectroTienda</h1>
-            </div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="/productos/">Productos</a></li>
-                <li><a href="/categorias/">Categorias</a></li>
-                <li><a href="/locales/">Locales</a></li>
-                <li><a href="/productos/crear_producto/">Crear Producto</a></li>
-            </ul>
-        </nav>
-        <div>
-            <div>
-                <input type="text" placeholder="Buscar">
-            </div>
-            <div>
-                <button>Buscar</button>
-            </div>
-        </div>
-    </header>
-
-    {% block Contenido %}
-    {% endblock %}
-
+    </section> 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>

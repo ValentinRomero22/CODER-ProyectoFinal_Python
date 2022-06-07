@@ -21,9 +21,28 @@ from productos.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index_view, name = 'index'),
+
+    #productos
     path('productos/', producto_view, name = 'productos'),
+    path('productos/crear_producto/', CrearProducto.as_view() , name = 'crear_producto'),
+    path('productos/detalle_producto/<int:pk>/', DetalleProducto.as_view(), name = 'detalle_producto'),
+    path('productos/actualizar_producto/<int:pk>/', ActualizarProducto.as_view(), name = 'actualizar_producto'),
+    path('productos/eliminar_producto/<int:pk>/', EliminarProducto.as_view(), name = 'eliminar_producto'),
+    
+    #categorias
     path('categorias/', categoria_view, name = 'categorias'),
+    path('productos/crear_categoria/', CrearCategoria.as_view(), name = 'crear_categoria'),
+    path('productos/detalle_categoria/<int:pk>/', DetalleCategoria.as_view(), name = 'detalle_categoria'),
+    path('productos/actualizr_categoria/<int:pk>/', ActualizarCategoria.as_view(), name = 'actualizar_categoria'),
+    path('productos/eliminar_categoria/<int:pk>/', EliminarCategoria.as_view(), name = 'eliminar_categoria'),
+
+    #locales
     path('locales/', local_view, name = 'locales'),
     path('productos/crear_producto/', crear_producto, name = 'crear_producto'),
-    path("productos/search-product/", search_product_view, name = "search_product_view")
+    path("productos/search-product/", search_product_view, name = "search_product_view"),
+    path('productos/crear_local/', CrearLocal.as_view(), name = 'crear_local'),
+    path('productos/detalle_local/<int:pk>/', DetalleLocal.as_view(), name = 'detalle_local'),
+    path('productos/actualizr_local/<int:pk>/', ActualizarLocal.as_view(), name = 'actualizar_local'),
+    path('productos/eliminar_local/<int:pk>/', EliminarLocal.as_view(), name = 'eliminar_local'),
+
 ]

@@ -7,16 +7,19 @@
 {% block Contenido %}
 
 <h2>PRODUCTOS</h2>
+
+{{mensaje}}
+
 <div class="d-flex" style="margin-top:5rem; margin-left:7rem">
-    {% for product in productos %}
+    {% for producto in productos %}
 
     <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+        <!-- <img class="card-img-top" alt="Card image cap"> -->
         <div class="card-body">
-            <h5 class="card-title">{{product.name}}</h5>
-            <p class="card-text">{{product.descripcion}}</p>
-            <p class="card-text">{{product.precio}}</p>
-            <a href="#" class="btn btn-primary">Comprar!</a>
+            <h5 class="card-title">{{producto.name}}</h5>
+            <p class="card-text">{{producto.descripcion}}</p>
+            <p class="card-text">{{producto.precio}}</p>
+            <a href="/productos/detalle_producto/{{producto.id}}/" class="btn btn-primary">Ver detalle</a>
         </div>
     </div>
 
