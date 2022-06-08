@@ -8,4 +8,22 @@
 
 <h2>LOCALES</h2>
 
+<div class="d-flex" style="margin-top:5rem; margin-left:7rem">
+    {% for local in locales %}
+
+    <div class="card" style="width: 18rem;">
+        <!-- <img class="card-img-top" alt="Card image cap"> -->
+        <div class="card-body">
+            <h5 class="card-title">{{local.direccion}}</h5>
+            <p class="card-text">{{local.barrio}}</p>
+            <p class="card-text">{{local.apertura}}</p>
+            <p class="card-text">{{local.cierre}}</p>
+            <a href="/productos/detalle_local/{{local.id}}/" class="btn btn-primary">Ver detalle</a>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+<div style = "color:red;">{{error}}</div>
+
 {% endblock %}

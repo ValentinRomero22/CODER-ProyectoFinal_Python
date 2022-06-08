@@ -12,8 +12,23 @@ def index_view(request):
 #Productos
 def producto_view(request):
     productos = Producto.objects.all()
-    context = {'productos': productos}
+
+    if productos.exists():
+        context = {'productos':productos}
+    else:
+        context = {'error': 'No se existen productos registrados.'}
+
     return render(request, 'productos.html', context = context)
+
+def search_product_view(request):
+    productos = Producto.objects.filter(name__icontains = request.GET["search"])
+    
+    if productos.exists():
+        context = {"productos":productos}
+    else:
+        context = {'error': 'No se encontró ningún producto.'}
+
+    return render(request, "search_product.html", context = context)
 
 class CrearProducto(CreateView):
     model = Producto
@@ -45,7 +60,12 @@ class EliminarProducto(DeleteView):
 #Categorias
 def categoria_view(request):
     categorias = Categoria.objects.all()
-    context = {'categorias': categorias}
+
+    if categorias.exists():
+        context = {'categorias':categorias}
+    else:
+        context = {'error': 'No existen categorías registradas.'}
+
     return render(request, 'categorias.html', context = context)
 
 class CrearCategoria(CreateView):
@@ -78,31 +98,14 @@ class EliminarCategoria(DeleteView):
 #Locales
 def local_view(request):
     locales = Local.objects.all()
-    context = {'locales': locales}
+
+    if locales.exists():
+        context = {'locales': locales}
+    else:
+        context = {'error': 'No existen locales registrados.'}
+
     return render(request, 'locales.html', context = context)
 
-def crear_producto(request):
-    if request.method == 'GET':
-        form = product_form
-        context = {'form':form}
-        return render(request, 'crear_producto.html', context = context)
-    else:
-        form = product_form(request.POST)
-        if form.is_valid():
-            new_product = Producto.objects.create(
-                name = form.cleaned_data['name'],
-                descripcion = form.cleaned_data['descripcion'],
-                precio = form.cleaned_data['precio'],
-                SKU = form.cleaned_data['SKU'],
-                activo = form.cleaned_data['activo'],
-            )
-            context = {'new_product':new_product}
-        return render(request, 'crear_producto.html', context = context)
-
-def search_product_view(request):
-    products = Producto.objects.filter(name__icontains = request.GET["search"])
-    context = {"products":products}
-    return render(request, "search_product.html", context = context)
 class CrearLocal(CreateView):
     model = Local
     template_name = 'crear_local.html'
@@ -118,7 +121,7 @@ class DetalleLocal(DetailView):
 class ActualizarLocal(UpdateView):
     model = Local
     template_name = 'actualizar_local.html'
-    fields = ['name']
+    fields = ['direccion', 'barrio', 'apertura', 'cierre']
 
     def get_success_url(self):
         return reverse('detalle_local', kwargs = {'pk':self.object.pk})
@@ -129,3 +132,21 @@ class EliminarLocal(DeleteView):
 
     def get_success_url(self):
         return reverse('locales')
+
+""" def crear_producto(request):
+    if request.method == 'GET':
+        form = product_form
+        context = {'form':form}
+        return render(request, 'crear_producto.html', context = context)
+    else:
+        form = product_form(request.POST)
+        if form.is_valid():
+            new_product = Producto.objects.create(
+                name = form.cleaned_data['name'],
+                descripcion = form.cleaned_data['descripcion'],
+                precio = form.cleaned_data['precio'],
+                SKU = form.cleaned_data['SKU'],
+                activo = form.cleaned_data['activo'],
+            )
+            context = {'new_product':new_product}
+        return render(request, 'crear_producto.html', context = context) """

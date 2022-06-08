@@ -20,7 +20,7 @@ class Categoria(models.Model):
         verbose_name_plural = 'categorias'
 
 class Local(models.Model):
-    direccion = models.CharField(max_length=50)
+    direccion = models.CharField(max_length=50, unique=True)
     barrio = models.CharField(max_length=30)
     apertura = models.TimeField()
     cierre = models.TimeField()

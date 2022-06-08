@@ -8,8 +8,6 @@
 
 <h2>PRODUCTOS</h2>
 
-{{mensaje}}
-
 <div class="d-flex" style="margin-top:5rem; margin-left:7rem">
     {% for producto in productos %}
 
@@ -25,5 +23,6 @@
 
     {% endfor %}
 </div>
+<div style = "color:red;">{{error}}</div>
 
 {% endblock %}
