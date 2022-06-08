@@ -1,53 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
 
-        {% block Titulo %}
-        {% endblock %}
+      {% block Titulo %}
+      {% endblock %}
 
-    </title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous"> 
-    <link rel="stylesheet" href="../static/estilos.css">
-    <head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-pink bg-primary">
-            <a class="navbar-brand" href="/""/">ELECTROTIENDA</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="/productos/">Productos</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/categorias/">Categorias</a>
-                <li class="nav-item">
-                  <a class="nav-link" href="/locales/">Locales</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="/categorias/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                   Agregar
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/productos/crear_local">Local</a>
-                    <a class="dropdown-item" href="/productos/crear_producto">Producto</a>
-                    <a class="dropdown-item" href="/productos/crear_categoria/">Categoria</a>
-                  </div>
-                </li>
-              </ul>
-              <form class="form-inline my-2 my-lg-0" action = "/productos/search-product/" method = "GET">
-                <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search" name = "search" >
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar Producto</button>
-              </form>
+  </title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="/static/estilos.css">
+<head>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-pink bg-primary">
+    <a class="navbar-brand" href="/""/">ELECTROTIENDA</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>          
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/productos/">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/categorias/">Categorias</a>
+          <li class="nav-item">
+            <a class="nav-link" href="/locales/">Locales</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/categorias/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+              Agregar
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/productos/crear_local">Local</a>
+              <a class="dropdown-item" href="/productos/crear_producto">Producto</a>
+              <a class="dropdown-item" href="/productos/crear_categoria/">Categoria</a>
             </div>
-          </nav>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0" action = "/productos/search-product/" method = "GET">
+          <input class="form-control mr-sm-2" type="text" placeholder="Buscar producto" aria-label="Search" name = "search" >
+          <button class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+      </div>
+  </nav>
 </head>
+<body>
+  <section>
+
       {% block Contenido %}
       {% endblock %}
 
