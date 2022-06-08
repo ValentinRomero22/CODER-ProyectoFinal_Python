@@ -100,7 +100,7 @@ def crear_producto(request):
         return render(request, 'crear_producto.html', context = context)
 
 def search_product_view(request):
-    products = Producto.objects.filter(name = request.GET["search"])
+    products = Producto.objects.filter(name__icontains = request.GET["search"])
     context = {"products":products}
     return render(request, "search_product.html", context = context)
 class CrearLocal(CreateView):
