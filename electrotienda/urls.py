@@ -17,6 +17,7 @@ from unittest.mock import patch
 from django.contrib import admin
 from django.urls import path
 from productos.views import *
+from electrotienda.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -39,10 +40,13 @@ urlpatterns = [
 
     #locales
     path('locales/', local_view, name = 'locales'),
-    #path('productos/crear_producto/', crear_producto, name = 'crear_producto'),
     path('productos/crear_local/', CrearLocal.as_view(), name = 'crear_local'),
     path('productos/detalle_local/<int:pk>/', DetalleLocal.as_view(), name = 'detalle_local'),
     path('productos/actualizar_local/<int:pk>/', ActualizarLocal.as_view(), name = 'actualizar_local'),
     path('productos/eliminar_local/<int:pk>/', EliminarLocal.as_view(), name = 'eliminar_local'),
 
+    #Usuarios
+    path('login/', login_view, name = 'login'),
+    path('logout/', logout_view, name = 'logout'),
+    path('register/', registro_view, name = 'registro'),
 ]

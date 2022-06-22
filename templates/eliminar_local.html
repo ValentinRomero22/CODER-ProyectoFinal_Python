@@ -6,13 +6,11 @@
 
 {% block Contenido %}
 
-    {% if form %}
-        <h3>Seguro que desea eliminar {{object.name}}?</h3>
+    <h3>Seguro que desea eliminar {{object.name}}?</h3>
 
-        <form method="POST">
-            {% csrf_token %}
-            <button type="submit" class="btn btn-danger">Eliminar</button>
-        </form>
-    {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+    </form>
 
 {% endblock %}

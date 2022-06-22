@@ -132,21 +132,3 @@ class EliminarLocal(DeleteView):
 
     def get_success_url(self):
         return reverse('locales')
-
-""" def crear_producto(request):
-    if request.method == 'GET':
-        form = product_form
-        context = {'form':form}
-        return render(request, 'crear_producto.html', context = context)
-    else:
-        form = product_form(request.POST)
-        if form.is_valid():
-            new_product = Producto.objects.create(
-                name = form.cleaned_data['name'],
-                descripcion = form.cleaned_data['descripcion'],
-                precio = form.cleaned_data['precio'],
-                SKU = form.cleaned_data['SKU'],
-                activo = form.cleaned_data['activo'],
-            )
-            context = {'new_product':new_product}
-        return render(request, 'crear_producto.html', context = context) """
