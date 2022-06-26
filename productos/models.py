@@ -7,17 +7,25 @@ class Producto(models.Model):
     precio = models.FloatField()
     SKU = models.CharField(max_length=20, unique=True)
     activo = models.BooleanField()
+    category = models.ForeignKey("Categoria", on_delete=models.CASCADE, related_name="productos")
 
     class Meta:
         verbose_name = 'producto'
         verbose_name_plural = 'productos'
+        
+    def __str__(self):
+        return self.name
 
 class Categoria(models.Model):
     name = models.CharField(max_length=15)
+    #descripcion = models.CharField(max_length=100)
 
     class Meta:
         verbose_name = 'categoria'
         verbose_name_plural = 'categorias'
+        
+    def __str__(self):
+        return self.name
 
 class Local(models.Model):
     direccion = models.CharField(max_length=50, unique=True)
