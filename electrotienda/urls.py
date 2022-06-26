@@ -48,5 +48,5 @@ urlpatterns = [
     #Usuarios
     path('login/', login_view, name = 'login'),
     path('logout/', logout_view, name = 'logout'),
-    path('register/', registro_view, name = 'registro'),
+    path('register/', registro_view, name = 'register'),
 ]
