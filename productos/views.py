@@ -5,6 +5,8 @@ from django.views.generic import ListView, DetailView, CreateView, DeleteView, U
 from productos.models import *
 from productos.forms import *
 
+from django.contrib.auth.mixins import LoginRequiredMixin 
+
 # Create your views here.
 def index_view(request):
     return render(request, 'index.html')
@@ -30,7 +32,7 @@ def search_product_view(request):
 
     return render(request, "search_product.html", context = context)
 
-class CrearProducto(CreateView):
+class CrearProducto(LoginRequiredMixin, CreateView):
     model = Producto
     template_name = 'crear_producto.html'
     fields = '__all__'

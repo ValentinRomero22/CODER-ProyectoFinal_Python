@@ -22,6 +22,7 @@ from electrotienda.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index_view, name = 'index'),
+    path("contacto/", contacto_view, name = "contacto"),
 
     #productos
     path('productos/', producto_view, name = 'productos'),

@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import AuthenticationForm,UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 
-#from electrotienda.forms import Formulario_registro_usuario
+from electrotienda.forms import Formulario_registro_usuario
+from django.contrib.auth.decorators import login_required
 
 def login_view(request):
     if request.method == 'POST':
@@ -36,7 +37,7 @@ def login_view(request):
 
 def registro_view(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = Formulario_registro_usuario(request.POST)
 
         if form.is_valid():
             form.save()
@@ -49,12 +50,12 @@ def registro_view(request):
 
         else: 
             errors : form.errors
-            form = UserCreationForm()
+            form = Formulario_registro_usuario()
             context = {'errors' : errors, 'form' : form}
             return render(request, 'auth/register.html', context = context)
 
     else: 
-        form = UserCreationForm()
+        form = Formulario_registro_usuario()
         context = {'form' : form}
         return render(request, 'auth/register.html', context = context)
 
@@ -65,11 +66,12 @@ def logout_view(request):
     logout(request)
     return redirect('index')
 
-""" def contacto_view(request):
+@login_required
+def contacto_view(request):
     if request.user.is_authenticated and request.user.is_superuser:
         return render(request, 'contacto.html')
     
     else:
-        return redirect('login') """
+        return redirect('login')
 
 
