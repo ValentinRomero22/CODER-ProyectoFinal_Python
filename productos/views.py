@@ -44,7 +44,7 @@ class DetalleProducto(DetailView):
     model = Producto
     template_name= 'detalle_producto.html'
 
-class ActualizarProducto(UpdateView):
+class ActualizarProducto(LoginRequiredMixin, UpdateView):
     model = Producto
     template_name = 'actualizar_producto.html'
     fields = ['name', 'descripcion', 'precio', 'activo']
@@ -52,7 +52,7 @@ class ActualizarProducto(UpdateView):
     def get_success_url(self):
         return reverse('detalle_producto', kwargs = {'pk':self.object.pk})
 
-class EliminarProducto(DeleteView):
+class EliminarProducto(LoginRequiredMixin, DeleteView):
     model = Producto
     template_name = 'eliminar_producto.html'
 
@@ -70,7 +70,7 @@ def categoria_view(request):
 
     return render(request, 'categorias.html', context = context)
 
-class CrearCategoria(CreateView):
+class CrearCategoria(LoginRequiredMixin, CreateView):
     model = Categoria
     template_name = 'crear_categoria.html'
     fields = '__all__'
@@ -82,7 +82,7 @@ class DetalleCategoria(DetailView):
     model = Categoria
     template_name= 'detalle_categoria.html'
 
-class ActualizarCategoria(UpdateView):
+class ActualizarCategoria(LoginRequiredMixin, UpdateView):
     model = Categoria
     template_name = 'actualizar_categoria.html'
     fields = ['name']
@@ -90,7 +90,7 @@ class ActualizarCategoria(UpdateView):
     def get_success_url(self):
         return reverse('detalle_categoria', kwargs = {'pk':self.object.pk})
 
-class EliminarCategoria(DeleteView):
+class EliminarCategoria(LoginRequiredMixin, DeleteView):
     model = Categoria
     template_name = 'eliminar_categoria.html'
 
@@ -108,7 +108,7 @@ def local_view(request):
 
     return render(request, 'locales.html', context = context)
 
-class CrearLocal(CreateView):
+class CrearLocal(LoginRequiredMixin, CreateView):
     model = Local
     template_name = 'crear_local.html'
     fields = '__all__'
@@ -120,7 +120,7 @@ class DetalleLocal(DetailView):
     model = Local
     template_name= 'detalle_local.html'
 
-class ActualizarLocal(UpdateView):
+class ActualizarLocal(LoginRequiredMixin, UpdateView):
     model = Local
     template_name = 'actualizar_local.html'
     fields = ['direccion', 'barrio', 'apertura', 'cierre']
@@ -128,7 +128,7 @@ class ActualizarLocal(UpdateView):
     def get_success_url(self):
         return reverse('detalle_local', kwargs = {'pk':self.object.pk})
 
-class EliminarLocal(DeleteView):
+class EliminarLocal(LoginRequiredMixin, DeleteView):
     model = Local
     template_name = 'eliminar_local.html'
 
