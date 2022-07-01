@@ -16,9 +16,12 @@ class Producto(models.Model):
     def __str__(self):
         return self.name
 
+class ImagenProducto(models.Model):
+    imagen = models.ImageField(upload_to = 'productos')
+    producto = models.ForeignKey(Producto, on_delete = models.CASCADE, related_name="imagenes")
+
 class Categoria(models.Model):
     name = models.CharField(max_length=15)
-    #descripcion = models.CharField(max_length=100)
 
     class Meta:
         verbose_name = 'categoria'
@@ -32,6 +35,7 @@ class Local(models.Model):
     barrio = models.CharField(max_length=30)
     apertura = models.TimeField()
     cierre = models.TimeField()
+    imagen = models.ImageField(upload_to = 'locales', blank = True, null = True)
 
     class Meta:
         verbose_name = 'local'
