@@ -10,9 +10,11 @@
 
 <div class="d-flex" style="margin-top:5rem; margin-left:7rem">
     {% for local in locales %}
-
-    <div class="card" style="width: 18rem;">
-        <!-- <img class="card-img-top" alt="Card image cap"> -->
+    <p> 
+         <img src="/media\profile_image\electro.png" width:"500">
+    </p>
+    
+    <div class="card" style="width: 18rem;"  align="left">
         <div class="card-body">
             <h5 class="card-title">{{local.direccion}}</h5>
             <p class="card-text">{{local.barrio}}</p>
@@ -21,6 +23,7 @@
             <a href="/productos/detalle_local/{{local.id}}/" class="btn btn-primary">Ver detalle</a>
         </div>
     </div>
+
 
     {% endfor %}
 </div>
