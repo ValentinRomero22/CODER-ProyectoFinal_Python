@@ -27,18 +27,25 @@
     <ul class="menu-horizontal">
       <!-- <li class="nav-item active"> -->
       <li>
-        <a class="nav-link" href="/contacto/">CONTACTOS</a>
+        <a style="font-size: small" class="nav-link" href="/contacto/">CONTACTOS</a>
       </li>
       <!-- <li class="nav-item active"> -->
+
       <li>
-        <a class="nav-link" href="/productos/">PRODUCTOS</a>
+        <a style="font-size: small" class="nav-link" href="/about/">NOSOTROS</a>
+      </li>
+      <!-- <li class="nav-item active"> -->
+
+
+      <li>
+        <a style="font-size: small" class="nav-link" href="/productos/">PRODUCTOS</a>
       </li>
       <!-- <li class="nav-item"> -->
       <li>
-        <a class="nav-link" href="/categorias/">CATEGORIAS</a>
+        <a style="font-size: small" class="nav-link" href="/categorias/">CATEGORIAS</a>
       <!-- <li class="nav-item" style="margin-right: 3rem"> -->
       <li>
-        <a class="nav-link" href="/locales/">LOCALES</a>
+        <a style="font-size: small" class="nav-link" href="/locales/">LOCALES</a>
       </li>
       {% if request.user.is_authenticated %}
       <!-- <li class="nav-item" style="color:white"/> -->
@@ -52,16 +59,16 @@
       {% else %}
       <!-- <li class="nav-item"> -->
       <li>
-        <a class="nav-link" href="/login/">LOGIN</a>
+        <a style="font-size: small" class="nav-link" href="/login/">LOGIN</a>
       </li>
       <!-- <li class="nav-item"> -->
       <li>
-        <a class="nav-link" href="/register/">REGISTRO</a>
+        <a style="font-size: small" class="nav-link" href="/register/">REGISTRO</a>
       </li>
       {% endif %}
       <!-- <li class="nav-item dropdown"> -->
       <li>
-        <a href="#">AGREGAR</a>
+        <a style="font-size: small" href="#">AGREGAR</a>
         <ul class="menu-vertical">
           <a class="dropdown-item" href="/productos/crear_local">LOCAL</a>
           <a class="dropdown-item" href="/productos/crear_producto">PRODUCTO</a>
@@ -80,8 +87,8 @@
   </nav>
   <div class="contenedor-busqueda"> 
     <form class="form-inline my-2 my-lg-0" action = "/productos/search-product/" method = "GET">
-      <input class="form-control mr-sm-2" type="text" placeholder="Buscar producto" aria-label="Search" name = "search" >
-      <button class="btn btn-success my-2 my-sm-0" type="submit">BUSCAR</button>
+      <input style="font-size: small" class="form-control mr-sm-2" type="text" placeholder="Buscar producto" aria-label="Search" name = "search" >
+      <button style="font-size: small" class="btn btn-success my-2 my-sm-0" type="submit">BUSCAR</button>
     </form>
   </div>
 </header>

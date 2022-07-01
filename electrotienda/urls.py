@@ -52,4 +52,8 @@ urlpatterns = [
     path('login/', login_view, name = 'login'),
     path('logout/', logout_view, name = 'logout'),
     path('register/', registro_view, name = 'register'),
+
+    #Acerca de 
+    path('about/', about_us, name= 'about'),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

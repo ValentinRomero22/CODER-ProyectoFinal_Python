@@ -74,4 +74,6 @@ def contacto_view(request):
     else:
         return redirect('login')
 
+def about_us(request):
+    return render(request, 'about.html')    
 
