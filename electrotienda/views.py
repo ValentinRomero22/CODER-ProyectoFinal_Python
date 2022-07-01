@@ -5,6 +5,8 @@ from django.contrib.auth import authenticate, login, logout
 from electrotienda.forms import Formulario_registro_usuario
 from django.contrib.auth.decorators import login_required
 
+from productos.models import Producto
+
 def login_view(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, data = request.POST)
@@ -60,7 +62,9 @@ def registro_view(request):
         return render(request, 'auth/register.html', context = context)
 
 def index(request):
-    return render(request, 'index.html')
+    productos = Producto.objects.get(id=1)
+    for ImagenProducto in productos.images.all():
+        return render(request, 'index.html')
 
 def logout_view(request):
     logout(request)
