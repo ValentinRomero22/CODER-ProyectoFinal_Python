@@ -21,8 +21,12 @@ h2{
     margin: 20px 0px 10px 0px;
 }
 
+p{
+    margin: 0;
+}
+
 .main{
-    margin: 2% 15% 2% 15%;
+    margin: 2% 10% 2% 10%;
 }
 
 .header{
@@ -133,50 +137,20 @@ nav{
     min-height: 51vh
 }
 
-/* .navbar{
-    padding: 10px 100px;
-} */
-
-/* .navbar-nav{
-    padding: 0px 50px;
-}
-
-.nav-item{
-    padding: 0px 20px;
-}
-
-.nav-link{
-    color: #FFF !important;
-}
-
-.nav-link:hover{
-    color: #000 !important;
-    background-color: #FFF;
-    border-radius: 5PX;
-} */
-
-/* .d-flex{
-    margin-top: 50px !important;
-    margin-left: 0px !important;
-} */
-
 .separador{
     margin-bottom: 25px;
 }
 
 .catalogo{
-    display: grid !important;
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
     justify-items: center;
     gap: 5%; 
 }
 
-/* .card{
-    margin-right: 30px;
-} */
-
 .item{
+    padding: 0% 5%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -195,29 +169,29 @@ nav{
     height: 150px;
 }
 
-/* .card:hover{
-    box-shadow: 0px 5px 10px -5px #000;
-} */
-
 .item-imagen{
-    height: 60%;
+    height: 45%;
 }
 
 .item-nombre{
-    width: 90%;
-    height: 25%;
+    width: 100%;
+    height: 30%;
     display: flex;
     justify-content: center;
     font-size: 1.6em;
 }
 
+.categoria-nombre{
+    height: auto;
+}
+
 .item-footer{
-    width: 90%;
+    width: 100%;
     height: 25%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    padding: 10px;
+    justify-content: space-between;
+    padding-bottom: 5%;
     font-weight: bold;
     font-size: 1.2em;
 }
@@ -235,6 +209,28 @@ nav{
 
 .item-footer a:hover{
     background-color: rgb(15, 82, 170);
+}
+
+.contenedor-dato{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    padding: 3% 0%;
+}
+
+.titulo-dato{
+    font-weight: bold;
+    color: #747474;
+}
+
+.dato{
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.local-footer{
+    justify-content: flex-end;
 }
 
 footer{

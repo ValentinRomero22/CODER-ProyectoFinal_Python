@@ -6,22 +6,23 @@
 
 {% block Contenido %}
 
-<h2>CATEGORIAS</h2>
-
-<div class="d-flex" style="margin-top:5rem; margin-left:7rem">
-    {% for categoria in categorias %}
-
-    <div class="card" style="width: 18rem;">
-        <!-- <img class="card-img-top" alt="Card image cap"> -->
-        <div class="card-body">
-            <h5 class="card-title">{{categoria.name}}</h5>
-            <a href="/productos/detalle_categoria/{{categoria.id}}/" class="btn btn-primary">Ver detalle</a>
+<section class="main">
+    <h2>CATEGORIAS</h2>
+    <hr class="separador">
+    <div class="catalogo">
+        {% for categoria in categorias %}
+        <div class="item">
+            <div class="item-nombre categoria-nombre">
+                <h5>{{categoria.name}}</h5>
+            </div>
+            <div class="item-footer">
+                <a href="/productos/detalle_categoria/{{categoria.id}}/">Ver detalle</a>         
+            </div>           
         </div>
+        {% endfor %}
     </div>
-
-    {% endfor %}
-</div>
-<div style = "color:red;">{{error}}</div>
+    <div style = "color:red;">{{error}}</div>
+</section>
 
 {% endblock %}
 

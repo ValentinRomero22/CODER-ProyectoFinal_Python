@@ -20,4 +20,3 @@ class LocalAdmin(admin.ModelAdmin):
 admin.site.register(Producto, ProductoAdmin)
 admin.site.register(Categoria, CategoriaAdmin)
 admin.site.register(Local, LocalAdmin)
-admin.site.register(ImagenProducto)
