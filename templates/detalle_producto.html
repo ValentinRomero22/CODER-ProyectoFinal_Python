@@ -6,22 +6,38 @@
 
 {% block Contenido %}
 
-<h2>DETALLE DEL PRODUCTO</h2>
-<div class="d-flex" style="margin-top:5rem; margin-left:7rem">
-
-    <div class="card" style="width: 18rem;">
-        {% for imagen in producto.imagenes.all %}
-            <img src="{{ imagen.imagen.url }}">
-        {% endfor %}        
-        <div class="card-body">
-            <h5 class="card-title">{{object.name}}</h5>
-            <p class="card-text">{{object.descripcion}}</p>
-            <p class="card-text">{{object.precio}}</p>
-            <a href="/productos/actualizar_producto/{{object.id}}/" class="btn btn-primary">Editar</a>
-            <a href="/productos/eliminar_producto/{{object.id}}/" class="btn btn-danger">Eliminar</a>
+<section class="main">
+    <h2>DETALLE DEL PRODUCTO {{object.id}}</h2>
+    <hr class="separador">
+    <div class="contenedor-detalle">
+        <div class="imagen-detalle">
+            <!-- {% if producto.imagenes.all < 3 %}
+                <p>solo una imagen</p>
+            {% else %}
+                {% for imagen in producto.imagenes.all %}
+                    <img src="{{ imagen.imagen.url }}">
+                {% endfor %}  
+            {% endif %} -->
+            {% for imagen in producto.imagenes.all %}
+                <img src="{{ imagen.imagen.url }}">
+            {% endfor %}
+        </div>      
+        <div class="info-detalle detalle-producto">
+            <p class="titulo-producto">{{object.name}}</p>
+            <div class="contenedor-dato">
+                <p class="titulo-dato">DESCRIPCIÓN</p>
+                <p class="dato">$ {{object.descripcion}}</p>
+            </div>
+            <div class="contenedor-dato">
+                <p class="titulo-dato">PRECIO</p>
+                <p class="dato">$ {{object.precio}}</p>
+            </div>
+            <div class="botones-detalle">
+                <a class="boton-editar" href="/productos/actualizar_producto/{{object.id}}/">Editar</a>
+                <a class="boton-eliminar" href="/productos/eliminar_producto/{{object.id}}/">Eliminar</a>
+            </div>
         </div>
     </div>
-
-</div>
+</section>
 
 {% endblock %}

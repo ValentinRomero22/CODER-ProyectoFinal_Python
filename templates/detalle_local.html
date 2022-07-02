@@ -6,25 +6,34 @@
 
 {% block Contenido %}
 
-<h2>DETALLE DEL LOCAL</h2>
-<div class="d-flex" style="margin-top:5rem; margin-left:7rem">
-    <p> 
-        <img src="/media\profile_image\electro.png" width:"500">
-   </p>
-
-    <div class="card" style="width: 18rem;">
-        <!-- <img class="card-img-top" alt="Card image cap"> -->
-        <div class="card-body">
-            <h5 class="card-title">Local {{object.id}}</h5>
-            <p class="card-text">{{object.direccion}}</p>
-            <p class="card-text">{{object.barrio}}</p>
-            <p class="card-text">{{object.apertura}}</p>
-            <p class="card-text">{{object.cierre}}</p>
-            <a href="/productos/actualizar_local/{{object.id}}/" class="btn btn-primary">Editar</a>
-            <a href="/productos/eliminar_local/{{object.id}}/" class="btn btn-danger">Eliminar</a>
+<section class="main">
+    <h2>DETALLE DEL LOCAL {{object.id}}</h2>
+    <hr class="separador">
+    <div class="contenedor-detalle">
+        <div class="imagen-detalle">
+            <img src="{{ local.imagen.url }}" alt="imagen">
+        </div>
+        <hr >
+        <div class="info-detalle">
+            <div class="contenedor-dato">
+                <p class="titulo-dato">DIRECCIÓN</p>
+                <p class="dato">{{object.direccion}}</p>
+            </div>
+            <div class="contenedor-dato">
+                <p class="titulo-dato">BARRIO</p>
+                <p class="dato">{{object.barrio}}</p>
+            </div>
+            <div class="contenedor-dato">
+                <p class="titulo-dato">HORARIO</p>
+                <p class="dato">De {{object.apertura}} a {{object.cierre}} hs.</p>
+            </div>
+            <div class="botones-detalle">
+                <a class="boton-editar" href="/productos/actualizar_local/{{object.id}}/">Editar</a>
+                <a class="boton-eliminar" href="/productos/eliminar_local/{{object.id}}/">Eliminar</a>
+            </div>            
         </div>
     </div>
-
-</div>
+    <div style = "color:red;">{{error}}</div>
+</section>
 
 {% endblock %}

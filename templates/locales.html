@@ -12,7 +12,13 @@
     <div class="catalogo">
     {% for local in locales %}   
         <div class="item">
-            <div class="contenedor-dato">
+            <div class="item-imagen">
+                <img src="{{ local.imagen.url }}" alt="imagen">             
+           </div>
+            <div class="item-nombre height-auto">
+                <h5>LOCAL {{local.id}}</h5>
+            </div>
+            <!-- <div class="contenedor-dato">
                 <p class="titulo-dato">DIRECCIÓN</p>
                 <p class="dato">{{local.direccion}}</p>
             </div>
@@ -23,7 +29,7 @@
             <div class="contenedor-dato">
                 <p class="titulo-dato">HORARIO</p>
                 <p class="dato">De {{local.apertura}} a {{local.cierre}} hs.</p>
-            </div>
+            </div> -->
             <div class="item-footer local-footer">
                 <a href="/productos/detalle_local/{{local.id}}/">Ver detalle</a>
             </div>

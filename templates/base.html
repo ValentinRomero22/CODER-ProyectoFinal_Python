@@ -19,40 +19,40 @@
   <nav>
     <ul class="menu-horizontal">
       <li>
-        <a style="font-size: small" class="nav-link" href="/contacto/">CONTACTOS</a>
+        <a href="/contacto/">CONTACTOS</a>
       </li>
       <li>
-        <a style="font-size: small" class="nav-link" href="/about/">NOSOTROS</a>
+        <a href="/about/">NOSOTROS</a>
       </li>
       <li>
-        <a style="font-size: small" class="nav-link" href="/productos/">PRODUCTOS</a>
+        <a href="/productos/">PRODUCTOS</a>
       </li>
       <li>
-        <a style="font-size: small" class="nav-link" href="/categorias/">CATEGORIAS</a>
+        <a href="/categorias/">CATEGORIAS</a>
       <li>
-        <a style="font-size: small" class="nav-link" href="/locales/">LOCALES</a>
+        <a href="/locales/">LOCALES</a>
       </li>
       {% if request.user.is_authenticated %}
         <li>
           <h6>{{request.user.username}}</h6>
         </li>
         <li>
-          <a class="nav-link" href="/logout/">LOGOUT</a>
+          <a href="/logout/">LOGOUT</a>
         </li>
       {% else %}
         <li>
-          <a style="font-size: small" class="nav-link" href="/login/">LOGIN</a>
+          <a href="/login/">LOGIN</a>
         </li>
         <li>
-          <a style="font-size: small" class="nav-link" href="/register/">REGISTRO</a>
+          <a href="/register/">REGISTRO</a>
         </li>
       {% endif %}
       <li>
-        <a style="font-size: small" href="#">AGREGAR</a>
+        <a href="#">AGREGAR</a>
         <ul class="menu-vertical">
-          <a class="dropdown-item" href="/productos/crear_local">LOCAL</a>
-          <a class="dropdown-item" href="/productos/crear_producto">PRODUCTO</a>
-          <a class="dropdown-item" href="/productos/crear_categoria/">CATEGORIA</a>
+          <a href="/productos/crear_local">LOCAL</a>
+          <a href="/productos/crear_producto">PRODUCTO</a>
+          <a href="/productos/crear_categoria/">CATEGORIA</a>
         </ul>
       </li>
     </ul>
