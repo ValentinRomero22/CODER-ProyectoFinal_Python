@@ -6,11 +6,12 @@
 
 {% block Contenido %}
 
-    <h3>Seguro que desea eliminar {{object.name}}?</h3>
-
+<section class="main">
+    <h2>Seguro que desea eliminar el local {{object.id}}?</h2>
     <form method="POST">
         {% csrf_token %}
-        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <button type="submit" class="boton-eliminar confirmar-eliminar">Eliminar</button>
     </form>
+</section>
 
 {% endblock %}

@@ -6,16 +6,18 @@
 
 {% block Contenido %}
 
-
-        <h2>Complete los campos para registrarse</h2>
-
+<section class="main">
+    <h2>Complete los campos para registrarse</h2>
+    <hr class="separador">
+    <div class="contenedor-form">
         <form action="" method="POST"> 
             {% csrf_token %}
             <table>
                 {{form.as_table}}
             </table>
-            <input type="submit", value="Registrar">
+            <input class="boton-editar" type="submit", value="Registrar">
         </form>
-    
+    </div>
+</section>
 
 {% endblock %}

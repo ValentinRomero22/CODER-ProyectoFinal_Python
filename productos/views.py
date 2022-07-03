@@ -1,11 +1,10 @@
 from multiprocessing import context
 from django.shortcuts import render
 from django.urls import reverse
-from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
+from django.views.generic import DetailView, CreateView, DeleteView, UpdateView
+from django.contrib.auth.mixins import LoginRequiredMixin 
 from productos.models import *
 from productos.forms import *
-
-from django.contrib.auth.mixins import LoginRequiredMixin 
 
 # Create your views here.
 def index_view(request):

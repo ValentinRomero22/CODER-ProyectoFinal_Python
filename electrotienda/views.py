@@ -68,7 +68,7 @@ def index(request):
 
 def logout_view(request):
     logout(request)
-    return redirect('index')
+    return redirect('login')
 
 @login_required
 def contacto_view(request):

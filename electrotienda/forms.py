@@ -5,8 +5,12 @@ from django.contrib.auth.forms import UserCreationForm
 
 class Formulario_registro_usuario(UserCreationForm):
     email = forms.EmailField()
-    password1: forms.CharField(label='Contraseña', widget=forms.PasswordInput)
+    password1: forms.CharField(label='Contraseña', widget=forms.PasswordInput, help_text='')
     password2: forms.CharField(label='Repita su contraseña', widget=forms.PasswordInput)
+    help_texts = {
+        "password1": None,
+        "password2": None,
+    }
 
     class Meta: 
         model = User

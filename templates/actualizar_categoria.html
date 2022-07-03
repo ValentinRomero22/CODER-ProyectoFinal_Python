@@ -6,15 +6,20 @@
 
 {% block Contenido %}
 
+<section class="main">
     {% if form %}
-        <h2>Actualizar Categoría</h2>
-        <form action="" method="POST" style="margin-left:40rem;margin-top:7rem">
-            {% csrf_token %}
-            <table>
-                {{form.as_table}}
-            </table>
-            <input type="submit" , value="Enviar">
-        </form>
+        <h2>ACTUALIZAR CATEGORIA {{object.id}}</h2>
+        <hr class="separador">
+        <div class="contenedor-form">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <table>
+                    {{form.as_table}}
+                </table>
+                <input class="boton-editar" type="submit" value="Guardar">
+            </form>
+        </div>
     {% endif %}
-
+</section>
+        
 {% endblock %}
