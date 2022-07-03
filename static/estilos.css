@@ -260,13 +260,20 @@ nav{
     max-height: 400px;
 }
 
+.slider-item-imagen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .info-detalle{
     width: 50%;
     padding-left: 5%;
-}
+} 
 
 .botones-detalle{
     display: flex;
+    width: 100%;
 }
 
 .botones-categoria{

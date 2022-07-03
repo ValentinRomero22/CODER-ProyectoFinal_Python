@@ -11,16 +11,26 @@
     <hr class="separador">
     <div class="contenedor-detalle">
         <div class="imagen-detalle">
-            <!-- {% if producto.imagenes.all < 3 %}
-                <p>solo una imagen</p>
+            {% if object.imagenes.all|length == 0 %}
+                <img src="/static/sin_imagen.png" alt="imagen">
+            {% elif object.imagenes.all|length == 1 %}
+                <img src="{{ object.imagenes.first.imagen.url }}">
             {% else %}
-                {% for imagen in producto.imagenes.all %}
-                    <img src="{{ imagen.imagen.url }}">
-                {% endfor %}  
-            {% endif %} -->
-            {% for imagen in producto.imagenes.all %}
-                <img src="{{ imagen.imagen.url }}">
-            {% endfor %}
+            <div class="swiffy-slider">
+                <ul class="slider-container">
+                    {% for imagen in producto.imagenes.all %} 
+                        <li class="slider-item-imagen"><img src="{{ imagen.imagen.url }}" style="max-width: 100%;height: auto;"></li>
+                    {% endfor %}
+                </ul>            
+                <button type="button" class="slider-nav"></button>
+                <button type="button" class="slider-nav slider-nav-next"></button>            
+                <div class="slider-indicators">
+                    <button class="active"></button>
+                    <button></button>
+                    <button></button>
+                </div>
+            </div> 
+            {% endif %}
         </div>      
         <div class="info-detalle detalle-producto">
             <p class="titulo-producto">{{object.name}}</p>
@@ -32,7 +42,7 @@
                 <p class="titulo-dato">PRECIO</p>
                 <p class="dato">$ {{object.precio}}</p>
             </div>
-            <div class="botones-detalle">
+            <div>
                 <a class="boton-editar" href="/productos/actualizar_producto/{{object.id}}/">Editar</a>
                 <a class="boton-eliminar" href="/productos/eliminar_producto/{{object.id}}/">Eliminar</a>
             </div>
