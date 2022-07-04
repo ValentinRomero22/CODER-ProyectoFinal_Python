@@ -13,7 +13,19 @@
     {% for local in locales %}   
         <div class="item">
             <div class="item-imagen">
-                <img src="{{ local.imagen.url }}" alt="imagen">             
+               
+        {% if local.imagenes.first.imagen.url %}
+            <img src="{{ local.imagenes.first.imagen.url }}" alt="imagen">
+            {% else %}
+             <img src="../static/sin_imagen.png" alt="imagen">
+          <div class="swiffy-slider">
+            <ul class="slider-container">
+             </ul>            
+              <button type="button" class="slider-nav"></button>
+              <button type="button" class="slider-nav slider-nav-next"></button>
+            </div> 
+            {% endif %}
+        </div>    
            </div>
             <div class="item-nombre height-auto">
                 <h5>LOCAL {{local.id}}</h5>

@@ -106,7 +106,7 @@ def local_view(request):
         context = {'error': 'No existen locales registrados.'}
 
     return render(request, 'locales.html', context = context)
-
+    
 class CrearLocal(LoginRequiredMixin, CreateView):
     model = Local
     template_name = 'crear_local.html'
