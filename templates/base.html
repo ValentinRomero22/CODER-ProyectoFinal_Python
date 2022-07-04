@@ -36,7 +36,7 @@
       </li>
       {% if request.user.is_authenticated %}
         <li>
-          <h6>{{request.user.username}}</h6>
+          <h6>Usuario: {{request.user.username}}</h6>
         </li>
         <li>
           <a href="/logout/">LOGOUT</a>
@@ -49,14 +49,14 @@
           <a href="/register/">REGISTRO</a>
         </li>
       {% endif %}
-      <li>
+      <!-- <li>
         <a href="#">AGREGAR</a>
         <ul class="menu-vertical">
           <a href="/productos/crear_local">LOCAL</a>
           <a href="/productos/crear_producto">PRODUCTO</a>
           <a href="/productos/crear_categoria/">CATEGORIA</a>
         </ul>
-      </li>
+      </li> -->
     </ul>
   </nav>
   <div class="contenedor-busqueda"> 
@@ -67,7 +67,7 @@
   </div>
 </header>
 </body>
-  <section class="cuerpo">
+  <section>
 
       {% block Contenido %}
       {% endblock %}

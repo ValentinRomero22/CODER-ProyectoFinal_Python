@@ -33,6 +33,7 @@ urlpatterns = [
     path('productos/detalle_producto/<int:pk>/', DetalleProducto.as_view(), name = 'detalle_producto'),
     path('productos/actualizar_producto/<int:pk>/', ActualizarProducto.as_view(), name = 'actualizar_producto'),
     path('productos/eliminar_producto/<int:pk>/', EliminarProducto.as_view(), name = 'eliminar_producto'),
+    #path('productos/agregar_imagen/<int:pk>/', CargarImagenProducto.as_view(), name = "agregar_imagen_producto"),
     
     #categorias
     path('categorias/', categoria_view, name = 'categorias'),

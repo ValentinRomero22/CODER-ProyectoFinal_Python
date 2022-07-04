@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 
 # Create your models here.
@@ -17,7 +18,7 @@ class Producto(models.Model):
         return self.name
 
 class ImagenProducto(models.Model):
-    imagen = models.ImageField(upload_to = 'productos')
+    imagen = models.ImageField(upload_to = 'productos', blank = True, null = True)
     producto = models.ForeignKey(Producto, on_delete = models.CASCADE, related_name="imagenes")
 
 class Categoria(models.Model):
@@ -35,7 +36,7 @@ class Local(models.Model):
     barrio = models.CharField(max_length=30)
     apertura = models.TimeField()
     cierre = models.TimeField()
-    imagen = models.ImageField(upload_to = 'locales', blank = True, null = True)
+    imagen = models.ImageField(upload_to = 'locales', blank = True, null = True, default="../static/sin_imagen.png")
 
     class Meta:
         verbose_name = 'local'

@@ -7,7 +7,12 @@
 {% block Contenido %}
 
 <section class="main">
-    <h2>CATEGORIAS</h2>
+    <div class="contenedor-titulo">
+        <h2>CATEGORIAS</h2>
+        <div class="contenedor-agregar">
+            <a class="boton-editar boton-agregar" href="/productos/crear_categoria/">AGREGAR CATEGORIA</a>
+        </div>
+    </div>
     <hr class="separador">
     <div class="catalogo">
         {% for categoria in categorias %}
