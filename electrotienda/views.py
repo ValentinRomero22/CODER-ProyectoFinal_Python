@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 
-from electrotienda.forms import Formulario_registro_usuario
+from electrotienda.forms import Formulario_registro_usuario, UserEditForm
 from django.contrib.auth.decorators import login_required
 
 from productos.models import Producto
@@ -51,7 +51,7 @@ def registro_view(request):
             return render(request, 'index.html', context = context)
 
         else: 
-            errors : form.errors
+            errors = form.errors 
             form = Formulario_registro_usuario()
             context = {'errors' : errors, 'form' : form}
             return render(request, 'auth/register.html', context = context)
@@ -70,14 +70,30 @@ def logout_view(request):
     logout(request)
     return redirect('login')
 
-@login_required
+
 def contacto_view(request):
-    if request.user.is_authenticated and request.user.is_superuser:
-        return render(request, 'contacto.html')
-    
-    else:
-        return redirect('login')
+    return render(request, 'contacto.html')
+
 
 def about_us(request):
-    return render(request, 'about.html')    
+    return render(request, 'about.html')   
 
+
+@login_required
+def edit_user(request):
+    user = request.user 
+
+    if request.method == 'POST':
+        form=UserEditForm(request.POST)
+        if form.is_valid():
+            informacion = form.cleaned_data
+            user.email = informacion['email']
+            user.password1 = informacion['password1']
+            user.password2 = informacion['password2']
+
+            return render (request, 'index.html')
+        
+    else:
+        form = UserEditForm(initial={'email':user.email})
+    
+    return render (request, 'auth/update_user.html', {'form': form, 'user' : user})

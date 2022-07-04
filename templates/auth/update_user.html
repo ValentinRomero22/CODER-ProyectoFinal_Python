@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block Titulo %}
+    Registro
+{% endblock %}
+
+{% block Contenido %}
+
+
+        <form action="" method="POST"> 
+            {% csrf_token %}
+            <table>
+                {{form.as_table}}
+            </table>
+        </form>
+
+
+{% endblock %}

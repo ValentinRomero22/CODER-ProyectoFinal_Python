@@ -53,6 +53,7 @@ urlpatterns = [
     path('login/', login_view, name = 'login'),
     path('logout/', logout_view, name = 'logout'),
     path('register/', registro_view, name = 'register'),
+    path('edit_user/', edit_user, name ='edit_user'),
 
     #Acerca de 
     path('about/', about_us, name= 'about'),
