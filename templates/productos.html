@@ -7,7 +7,12 @@
 {% block Contenido %}
 
 <section class="main">
-    <h2>PRODUCTOS</h2>
+    <div class="contenedor-titulo">
+        <h2>PRODUCTOS</h2>
+        <div class="contenedor-agregar">
+            <a class="boton-editar boton-agregar" href="/productos/crear_producto">AGREGAR PRODUCTO</a>
+        </div>
+    </div>
     <hr class="separador">
     <div class="catalogo">
         {% for producto in productos %}

@@ -7,26 +7,23 @@
 {% block Contenido %}
 
 <section class="main">
-    <h2>LOCALES</h2>
+    <div class="contenedor-titulo">
+        <h2>LOCALES</h2>
+        <div class="contenedor-agregar">
+            <a class="boton-editar boton-agregar" href="/productos/crear_local">AGREGAR LOCAL</a>
+        </div>
+    </div>
     <hr class="separador">
     <div class="catalogo">
     {% for local in locales %}   
         <div class="item">
-            <div class="item-imagen">
-               
-        {% if local.imagenes.first.imagen.url %}
-            <img src="{{ local.imagenes.first.imagen.url }}" alt="imagen">
-            {% else %}
-             <img src="../static/sin_imagen.png" alt="imagen">
-          <div class="swiffy-slider">
-            <ul class="slider-container">
-             </ul>            
-              <button type="button" class="slider-nav"></button>
-              <button type="button" class="slider-nav slider-nav-next"></button>
-            </div> 
-            {% endif %}
-        </div>    
-           </div>
+            <div class="item-detalle">
+                {% if local.imagen %}
+                    <img src="{{ local.imagen.url }}" alt="imagen">
+                {% else %}
+                    <img src="../static/sin_imagen.png" alt="imagen">   
+                {% endif %}
+            </div>
             <div class="item-nombre height-auto">
                 <h5>LOCAL {{local.id}}</h5>
             </div>
