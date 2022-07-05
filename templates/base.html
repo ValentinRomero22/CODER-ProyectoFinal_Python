@@ -36,6 +36,8 @@
         <li>
           <h6>Usuario: {{request.user.username}}</h6>
         </li>
+        <li class="nav-item">
+          <img src="{{request.user.perfil_usuario.profile_image.url}}" style="height:4rem;>"
         <li>
           <a href="/logout/">LOGOUT</a>
         </li>

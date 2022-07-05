@@ -72,7 +72,10 @@ def logout_view(request):
 
 
 def contacto_view(request):
-    return render(request, 'contacto.html')
+    if request.user.is_authenticated and request.user.is_superuser: 
+     return render(request, 'contacto.html')
+    else:
+        return redirect("login")
 
 
 def about_us(request):

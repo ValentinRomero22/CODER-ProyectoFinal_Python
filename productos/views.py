@@ -59,13 +59,13 @@ class EliminarProducto(LoginRequiredMixin, DeleteView):
     def get_success_url(self):
         return reverse('productos')
 
-""" class CargarImagenProducto(LoginRequiredMixin, CreateView):
+class CargarImagenProducto(LoginRequiredMixin, CreateView):
     model = ImagenProducto
     template_name = 'agregar_imagen_producto.html'
     fields = ['imagen']
 
     def get_success_url(self):
-        return reverse('detalle_producto', kwargs = {'pk':self.object.pk}) """
+        return reverse('detalle_producto', kwargs = {'pk':self.object.pk}) 
 
 #Categorias
 def categoria_view(request):
