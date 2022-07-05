@@ -1,9 +1,11 @@
-# Proyecto Final grupo 1 Joel
+# Proyecto Final grupo 1 Joel, llevado a cabo por Valentin Romero, Normal Videla y Melanie Stankevicius
 
 ## ELECTRO TIENDA 
     
 ## Contenido
     * Pagina de inicio - Bienvenida
+    * Contacto
+    * Acerca de Nosotros
     * Listado de Porductos
     * Listado de Categorias
     * Listado de Locales
@@ -12,6 +14,11 @@
 
 ## Navegacion:
     * http://127.0.0.1:8000/ --> inicio / displays index
+    
+    * http://127.0.0.1:8000/about/ encontramos informacion acerca de nosotros
+    
+    * http://127.0.0.1:8000/contacto/ encontramos informacion de contacto
+    
     * http://127.0.0.1:8000/productos/ encontramos los productos ya listados
         cada producto permite ver su detalle. Pueden ser editados o eliminado de la base de datos.
 
