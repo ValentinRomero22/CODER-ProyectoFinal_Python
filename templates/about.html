@@ -6,23 +6,39 @@
 
 {% block Contenido %}
 
-<center><h2>Acerca de nosotros</h2><center>
-
-
-<p>Bienvenidos a Electrotienda, un espacio donde encontraras todo lo que necesitas a tan solo un click de distancia.<br><br>
-
-    
-    <img src="/media\profile_image\note.jpg" alt="Foto de Valentin"<br>
- 
-
-    <img src="/media\profile_image\Norma.jpg" alt="Foto de Norma"<br>
-    
-    
-    <img src="/media\profile_image\note1.jpg" alt="Foto de Melanie"<br><br>
-
-    Somos Valentin, Norma y Melanie, alumnos del curso de Python dictado por Coderhouse.<br>
-    En esta pagina podran navegar por nuestro trabajo final, una pgaina web destinada a la compra de productos electronicos.
-</p>
-
+<section class="contenedor-nosotros">
+    <h2>Acerca de nosotros</h2>
+    <p>Bienvenidos a Electrotienda, un espacio donde encontraras todo lo que necesitas a tan solo un click de distancia.</p>
+    <div class="contenedor-perfiles">
+        <div class="perfil">
+            <div class="item-perfil">
+                <div>
+                    <img src="../static/valentin.png" alt="Foto de Valentín">
+                </div>
+                <div>
+                    <p>Valentín</p>
+                </div>
+            </div>
+            <div class="item-perfil">
+                <div>
+                    <img src="../static/norma.png" alt="Foto de Norma">
+                </div>
+                <div>
+                    <p>Norma</p>
+                </div>
+            </div>
+            <div class="item-perfil">
+                <div>
+                    <img src="../static/melanie.png" alt="Foto de Melanie">
+                </div>
+                <div>
+                    <p>Melanie</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>Somos Valentin, Norma y Melanie, alumnos del curso de Python dictado por Coderhouse.</p>
+    <p>En esta pagina podran navegar por nuestro trabajo final, una página web destinada al mantenimiento de productos electrónicos.</p>
+</section>
 
 {% endblock %}

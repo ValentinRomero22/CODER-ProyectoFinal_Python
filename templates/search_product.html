@@ -6,23 +6,29 @@
 
 {% block Contenido %}
 
-<h2>BUSCAR PRODUCTOS</h2>
-<div class="d-flex" style="margin-top:5rem; margin-left:7rem">
-    {% for producto in productos %}
-
-    <div class="card" style="width: 18rem;">
-        <!-- <img class="card-img-top" alt="Card image cap"> -->
-        <div class="card-body">
-            <h5 class="card-title">{{producto.name}}</h5>
-            <p class="card-text">{{producto.descripcion}}</p>
-            <p class="card-text">{{producto.precio}}</p>
-            <a href="/productos/detalle_producto/{{producto.id}}/" class="btn btn-primary"><button> Ver Detalle</button</a>
-            <a href="#" class="btn btn-primary"><button> Comprar! </button></a>
+<section class="main">
+    <h2>BUSQUEDA DE PRODUCTOS</h2>
+    <hr class="separador">
+    <div class="catalogo">
+        {% for producto in productos %}
+        <div class="item">
+                {% if producto.imagen %}
+                    <img src="{{ producto.imagen.url }}" alt="imagen">    
+                {% else %}
+                    <img src="../../static/sin_imagen.png" alt="imagen">
+                {% endif %}
+            <div class="item-nombre">
+                <h5>{{producto.name}}</h5>
+            </div>
+            <div class="item-footer">
+                <p>$ {{producto.precio}}</p>
+                <a href="/productos/detalle_producto/{{producto.id}}/" class="btn btn-primary">VER DETALLE</a>
+            </div>
         </div>
+        {% endfor %}
     </div>
+</section>
 
-    {% endfor %}
-</div>
 <div style = "color:red;">{{error}}</div>
 
 {% endblock %}

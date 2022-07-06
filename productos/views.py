@@ -47,7 +47,7 @@ class DetalleProducto(DetailView):
 class ActualizarProducto(LoginRequiredMixin, UpdateView):
     model = Producto
     template_name = 'actualizar_producto.html'
-    fields = ['name', 'descripcion', 'precio', 'activo']
+    fields = ['name', 'descripcion', 'precio', 'activo', 'imagen']
 
     def get_success_url(self):
         return reverse('detalle_producto', kwargs = {'pk':self.object.pk})
@@ -58,14 +58,6 @@ class EliminarProducto(LoginRequiredMixin, DeleteView):
 
     def get_success_url(self):
         return reverse('productos')
-
-class CargarImagenProducto(LoginRequiredMixin, CreateView):
-    model = ImagenProducto
-    template_name = 'agregar_imagen_producto.html'
-    fields = ['imagen']
-
-    def get_success_url(self):
-        return reverse('detalle_producto', kwargs = {'pk':self.object.pk}) 
 
 #Categorias
 def categoria_view(request):
@@ -131,7 +123,7 @@ class DetalleLocal(DetailView):
 class ActualizarLocal(LoginRequiredMixin, UpdateView):
     model = Local
     template_name = 'actualizar_local.html'
-    fields = ['direccion', 'barrio', 'apertura', 'cierre']
+    fields = ['direccion', 'barrio', 'apertura', 'cierre', 'imagen']
 
     def get_success_url(self):
         return reverse('detalle_local', kwargs = {'pk':self.object.pk})

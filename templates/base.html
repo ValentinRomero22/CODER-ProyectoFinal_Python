@@ -34,10 +34,8 @@
       </li>
       {% if request.user.is_authenticated %}
         <li>
-          <h6>Usuario: {{request.user.username}}</h6>
+          <a class="usuario" href="/edit_user/">USUARIO: {{request.user.username}}</a>
         </li>
-        <li class="nav-item">
-          <img src="{{request.user.perfil_usuario.profile_image.url}}" style="height:4rem;>"
         <li>
           <a href="/logout/">LOGOUT</a>
         </li>
@@ -49,14 +47,6 @@
           <a href="/register/">REGISTRO</a>
         </li>
       {% endif %}
-      <!-- <li>
-        <a href="#">AGREGAR</a>
-        <ul class="menu-vertical">
-          <a href="/productos/crear_local">LOCAL</a>
-          <a href="/productos/crear_producto">PRODUCTO</a>
-          <a href="/productos/crear_categoria/">CATEGORIA</a>
-        </ul>
-      </li> -->
     </ul>
   </nav>
   <div class="contenedor-busqueda"> 

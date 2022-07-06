@@ -130,6 +130,50 @@ nav{
     border-color: #dbb300;
 }
 
+.usuario{
+    font-style: italic;
+}
+
+.contenedor-nosotros{
+    margin: 2% 10% 2% 10%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    font-size: 1.3em;
+}
+
+.contenedor-nosotros h2{
+    margin-top: .3%;
+}
+
+.contenedor-perfiles{
+    margin: 2% 0%;
+    width: 60%;
+}
+
+.perfil{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-perfil{
+    display: flex;
+    flex-direction: column;
+}
+
+.item-perfil p{
+    font-weight: bold;
+}
+
+.perfil img{
+    border: 5px solid 23, 124, 255;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+}
+
 .main{
     margin: 2% 10% 2% 10%;
 }
@@ -398,8 +442,19 @@ nav{
     display: none;
 }
 
+.imagen-home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagen-home img{
+    width: 450px;
+    height: 400px;
+}
+
 footer{
-    margin-top: 10%;
+    margin-top: 5%;
     display: flex;
     flex-direction: column;
     justify-content: center;

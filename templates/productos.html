@@ -17,13 +17,11 @@
     <div class="catalogo">
         {% for producto in productos %}
             <div class="item">
-                <div class="item-imagen">
-                {% if producto.imagenes.first.imagen.url %}
-                    <img src="{{ producto.imagenes.first.imagen.url }}" alt="imagen">
+                {% if producto.imagen %}
+                    <img src="{{ producto.imagen.url }}" alt="imagen">    
                 {% else %}
                     <img src="../static/sin_imagen.png" alt="imagen">
                 {% endif %}
-                </div>
                 <div class="item-nombre">
                     <h5>{{producto.name}}</h5>
                 </div>

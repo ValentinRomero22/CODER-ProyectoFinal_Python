@@ -12,4 +12,4 @@ urlpatterns = [
     path("productos/search-produt/",search_product_view, name = "search_product_view"),
     path('categorias/', categoria_view, name = 'categorias'),
     path('locales/', local_view, name = 'locales'),
-    ]
+]

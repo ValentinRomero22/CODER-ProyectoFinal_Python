@@ -11,20 +11,10 @@
     <hr class="separador">
     <div class="contenedor-detalle">
         <div class="imagen-detalle">
-            {% if object.imagenes.all|length == 0 %}
-                <img src="/static/sin_imagen.png" alt="imagen">
-            {% elif object.imagenes.all|length == 1 %}
-                <img src="{{ object.imagenes.first.imagen.url }}">
+            {% if object.imagen %}
+                <img src="{{ object.imagen.url }}">
             {% else %}
-            <div class="swiffy-slider">
-                <ul class="slider-container">
-                    {% for imagen in producto.imagenes.all %} 
-                        <li class="slider-item-imagen"><img src="{{ imagen.imagen.url }}" style="max-width: 100%;height: auto;"></li>
-                    {% endfor %}
-                </ul>            
-                <button type="button" class="slider-nav"></button>
-                <button type="button" class="slider-nav slider-nav-next"></button>
-            </div> 
+                <img src="/static/sin_imagen.png" alt="imagen">
             {% endif %}
         </div>      
         <div class="info-detalle detalle-producto">

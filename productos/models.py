@@ -9,6 +9,7 @@ class Producto(models.Model):
     SKU = models.CharField(max_length=20, unique=True)
     activo = models.BooleanField()
     category = models.ForeignKey("Categoria", on_delete=models.CASCADE, related_name="productos")
+    imagen = models.ImageField(upload_to = 'productos', blank = True, null = True)
 
     class Meta:
         verbose_name = 'producto'
@@ -16,10 +17,6 @@ class Producto(models.Model):
         
     def __str__(self):
         return self.name
-
-class ImagenProducto(models.Model):
-    imagen = models.ImageField(upload_to = 'productos', blank = True, null = True)
-    producto = models.ForeignKey(Producto, on_delete = models.CASCADE, related_name="imagenes")
 
 class Categoria(models.Model):
     name = models.CharField(max_length=15)

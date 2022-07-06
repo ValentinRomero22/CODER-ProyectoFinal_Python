@@ -1,15 +1,11 @@
 from tkinter import Image
 from django.contrib import admin
-from productos.models import Categoria, Local, Producto, ImagenProducto
+from productos.models import Categoria, Local, Producto
 from productos import *
 
 # Register your models here.
-class ImagenProductoAdmin(admin.TabularInline):
-    model = ImagenProducto
-
 class ProductoAdmin(admin.ModelAdmin):
-    list_display = ["name", "precio", "SKU", "activo", "category"]
-    inlines = [ImagenProductoAdmin]
+    list_display = ["name", "precio", "SKU", "activo", "category", "imagen"]
 
 class CategoriaAdmin(admin.ModelAdmin):
     list_display = ["name"]

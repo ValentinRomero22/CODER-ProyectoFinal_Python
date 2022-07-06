@@ -9,6 +9,7 @@
 <section class="main">
     <h2>Complete los campos para iniciar sesion</h2>
     <hr class="separador">
+    <div style = "color:red; margin-left:25rem">{{error}}</div>
     <div class="contenedor-form">
         <form action="" method="POST"> 
             {% csrf_token %}
