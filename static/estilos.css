@@ -455,6 +455,7 @@ nav{
 
 footer{
     margin-top: 5%;
+    padding: 2% 0%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -474,67 +475,13 @@ footer ul li{
     padding: 0px 10px;
 }
 
-.slogan{
-    display: flex;
-    flex-direction: column;
-}
-
-.slogan h2{
+footer h2{
     text-align: center;
     color: #FFF;
 }
 
-.slogan p{
+ p{
     color: #FFF;
     font-size: 1.2em;
     font-weight: bold;
-}
-
-.redes{
-    padding-bottom: 1%;
-}
-
-.redes ul{
-    display: flex;
-    justify-content: center;  
-}
-
-.redes ul li:not(:first-child){
-    margin-left: 2%;
-}
-
-.facebook img:last-child{
-    display: none;
-}
-
-.facebook:hover img:last-child{
-    display: block;
-}
-
-.facebook:hover img:first-child{
-    display: none;
-}
-
-.instagram img:last-child{
-    display: none;
-}
-
-.instagram:hover img:last-child{
-    display: block;
-}
-
-.instagram:hover img:first-child{
-    display: none;
-}
-
-.youtube img:last-child{
-    display: none;
-}
-
-.youtube:hover img:last-child{
-    display: block;
-}
-
-.youtube:hover img:first-child{
-    display: none;
 }
