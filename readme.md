@@ -34,4 +34,7 @@
     * http://127.0.0.1:8000/productos/crear_producto/ habilita formulario para agregar locales a la base de datos. Los productos ya creados admiten ver sus detalles. Luego pueden ser editados o eliminados de la base de datos
 
     * http://127.0.0.1:8000/productos/crear_categoria/ habilita creacion de nueva categoria
+    
+## Video de usabilidad del sitio:
+    * https://drive.google.com/file/d/1u1fubvZKNsPIZ7FJANnL61LzzIeLdges/view
 
